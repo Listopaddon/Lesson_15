@@ -1,22 +1,19 @@
-﻿using System;
+﻿using Microsoft.Extensions.Options;
+using System;
 
 namespace Lesson_15.Models
 {
     public class RoomMeet
     {
-        int quantityPerson;
-        DateTime timeMeet;
-
-        public RoomMeet(SettingServicesRoom setting)
+        private readonly SettingServicesRoom options;
+        public RoomMeet(IOptions<SettingServicesRoom> options)
         {
-            this.quantityPerson = setting.quantityPerson;
-            this.timeMeet = setting.timeMeet;
+            this.options = options.Value;
         }
 
-        public void GetSettings()
+        public string GetSettings()
         {
-            Console.WriteLine($"Quantity person is {quantityPerson}");
-            Console.WriteLine($"Time meet will over at {timeMeet.Hour} o'clock");
+            return $"Quantity person is {options.quantityPerson}, Time is {options.timeMeet}";
         }
     }
 }

@@ -14,12 +14,7 @@ namespace Lesson_15
     {
         public static void Main(string[] args)
         {
-            //CreateHostBuilder(args).Build().Run();
-            DateTime dateTime = DateTime.Now;
-            SettingServicesRoom setting = new SettingServicesRoom(5, dateTime.AddHours(1));
-            RoomMeet roomMeet = new RoomMeet(setting);
-
-            roomMeet.GetSettings();
+            CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

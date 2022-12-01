@@ -1,3 +1,4 @@
+using Lesson_15.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,7 @@ namespace Lesson_15
         {
 
             services.AddControllers();
+            services.AddTransient<RoomMeet>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Lesson_15", Version = "v1" });
